@@ -1,3 +1,4 @@
+
 export const lightTheme = {
 
     body:"#FCF6F4",
@@ -6,6 +7,7 @@ export const lightTheme = {
     bodyRgba : "252, 246, 244",
     textRgba:"0,0,0",
 }
+
 export const DarkTheme = {
 
     body:"#000000",

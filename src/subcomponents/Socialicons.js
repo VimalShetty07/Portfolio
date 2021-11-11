@@ -1,57 +1,86 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { Github, Instagram, Linkedin, Twitter } from '../components/AllSvgs'
+import { Github, Instagram, Linkedin, Twitter } from '../components/AllSvgs';
+import { DarkTheme } from '../components/Themes';
+import { motion } from 'framer-motion'
 
 
 
 const Icons = styled.div`
 display: flex;
-flex-direction:column;
-align-items:center;
-
+flex-direction: column;
+align-items: center;
 position: fixed;
 bottom: 0;
 left: 2rem;
 z-index:3;
-
 &>*:not(:last-child){
-    margin:0.5rem 0;
+    margin: 0.5rem 0;
 }
 `
-const Line = styled.span`
+
+const Line = styled(motion.span)`
 width: 2px;
-height:8rem;
-background-color: ${props => props.theme.text};
+height: 8rem;
+background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body  };
 `
 
-
-const Socialicons = () => {
+const Socialicons = (props) => {
     return (
         <Icons>
-            <div>
-                <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:'https://github.com/VimalShetty07'}}>
-                    < Github with={25} height={25} fill='currentColor'/>
+            <motion.div
+            initial={{transform:"scale(0)"}}
+            animate={{scale:[0,1,1.5,1]}}
+            transition={{type:'spring', duration:1, delay:1.4}}
+            >
+                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://facebook.com/codebucks27"}}>
+                    <Github width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
                 </NavLink>
-            </div>
-            <div>
-                <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:'https://github.com/VimalShetty07'}}>
-                    <Twitter with={25} height={25} fill='currentColor'/>
+            </motion.div>
+            <motion.div
+            initial={{transform:"scale(0)"}}
+            animate={{scale:[0,1,1.5,1]}}
+            transition={{type:'spring', duration:1, delay:1.4}}
+            >
+                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://facebook.com/codebucks27"}}>
+                    <Twitter width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
                 </NavLink>
-            </div>
-            <div>
-                <NavLink style={{color: 'inherit'}} target="_blank"to={{pathname:'https://github.com/VimalShetty07'}}>
-                    <Linkedin with={25} height={25} fill='currentColor'/>
+            </motion.div>
+            <motion.div
+            initial={{transform:"scale(0)"}}
+            animate={{scale:[0,1,1.5,1]}}
+            transition={{type:'spring', duration:1, delay:1.4}}
+            >
+                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://facebook.com/codebucks27"}}>
+                    <Linkedin width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
                 </NavLink>
-            </div>
-            <div>
-                <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:'https://github.com/VimalShetty07'}}>
-                    <Instagram with={25} height={25} fill='currentColor'/>
+            </motion.div>
+            <motion.div
+            initial={{transform:"scale(0)"}}
+            animate={{scale:[0,1,1.5,1]}}
+            transition={{type:'spring', duration:1, delay:1.6}}
+            >
+                <NavLink style={{color:'inherit'}}  target="_blank"   to={{pathname:"https://youtube.com"}}>
+                    <Instagram width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text  : DarkTheme.body  } />
                 </NavLink>
-            </div>
+            </motion.div>
 
 
-            <Line/>
+            <Line color={props.theme}
+
+initial={
+    {
+        height:0
+    }
+}
+animate={{
+    height: '8rem'
+}}
+transition={{
+    type:'spring', duration:1, delay:0.8
+}}
+            />
         </Icons>
     )
 }
