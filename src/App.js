@@ -1,4 +1,4 @@
-import { Route,Switch } from "react-router"
+import { Route,Switch,useLocation } from "react-router"
 import { ThemeProvider } from "styled-components"
 import {lightTheme} from "./components/Themes"
 import GlobalStyle from "./globalStyles"
@@ -8,27 +8,42 @@ import ProjectsPage from "./components/ProjectsPage"
 import MySkillsPage from "./components/MySkillsPage"
 import AboutPage from "./components/AboutPage"
 import BlogPage from "./components/BlogPage"
+import { AnimatePresence } from "framer-motion"
+import SoundBar from "./subcomponents/SoundBar"
+
 
 
 function App() {
+
+  const location = useLocation();
   return <>
 
 
-  <GlobalStyle/>
+  <GlobalStyle />
 
-  <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={lightTheme}>
+    <SoundBar/>
 
-  <Switch>
-    <Route exact path="/" component={Main} />
-    <Route exact path="/about" component={AboutPage} />
-    <Route exact path="/project" component={ProjectsPage} />
-    <Route exact path="/skills" component={MySkillsPage} />
-    <Route exact path="/blog" component={BlogPage} />
     
-  </Switch>
-  </ThemeProvider>
 
-  </>
+{/* For framer-motion animation on page change! */}
+<AnimatePresence exitBeforeEnter>
+<Switch  location={location} key={location.pathname}>
+      <Route exact path="/" component={Main}/>
+      <Route exact path="/about" component={AboutPage}/>
+      <Route exact path="/blog" component={BlogPage}/>
+      <Route exact path="/work" component={ProjectsPage}/>
+      <Route exact path="/skills" component={MySkillsPage}/>
+
+    </Switch>
+</AnimatePresence>
+    
+    
+    </ThemeProvider>
+
+
+    
+    </>
     
 }
 
