@@ -1,10 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
+
 
 const BlogPage = () => {
     return (
-        <div>
+        <MainContainer>
            BlogPage component/Page 
-        </div>
+        </MainContainer>
     )
 }
 
