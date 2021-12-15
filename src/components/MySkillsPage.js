@@ -81,44 +81,45 @@ const MySkillsPage = () => {
         <ParticleComponent theme="light" />
         <Main>
           <Title>
-            <Design width={40} height={40} /> Designer
+            <Design width={40} height={40} /> Software Skills
           </Title>
           <Description>
-            I love to create design which speaks, Keep it clean, minimal and
-            simple.
+          Computer skills are abilities and knowledge which allow us to use computers and related technology.
           </Description>
           <Description>
-            <strong>I like to Design</strong>
+            <strong>Language</strong>
             <ul>
-              <li>Web Design</li>
-              <li>Mobile Apps</li>
+              <li>Python</li>
+              <li>C++</li>
+              <li>Java</li>
             </ul>
           </Description>
           <Description>
-            <strong>Tools</strong>
+            <strong>Database</strong>
             <ul>
-              <li>Figma</li>
+              <li>MongoDB</li>
+              <li>Mysql</li>
             </ul>
           </Description>
+         
         </Main>
         <Main>
           <Title>
-            <Develope width={40} height={40} /> Frontend Developer
+            <Develope width={40} height={40} />Web Developer
           </Title>
           <Description>
-            I value business or brand for which i'm creating, thus i enjoy
-            bringing new ideas to life.
+          Web development is the work involved in developing a website for the Internet or an intranet
           </Description>
           <Description>
             <strong>Skills</strong>
             <p>
-              Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase
+              Css, React, Redux, Django, NodeJs, Express Js,
               etc.
             </p>
           </Description>
           <Description>
             <strong>Tools</strong>
-            <p>VScode, Github, Codepen etc.</p>
+            <p>VScode, Github, etc.</p>
           </Description>
         </Main>
 
