@@ -74,7 +74,6 @@ ${Box}:hover &{
     }
 }
 `
-
 // Framer motion configuration
 const Item = {
     hidden:{
