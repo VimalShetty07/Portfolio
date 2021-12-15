@@ -39,7 +39,6 @@ display: flex;
     height: auto;
 }
 `
-
 const Text = styled.div`
 font-size: calc(1em + 1.5vw);
 color: ${props => props.theme.body};
